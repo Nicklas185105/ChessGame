@@ -1,0 +1,38 @@
+﻿<Window x:Class="ChessGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ChessGame"
+        xmlns:Left="clr-namespace:ChessGame.Left"
+        xmlns:Middle="clr-namespace:ChessGame.Middle"
+        xmlns:Right="clr-namespace:ChessGame.Right"
+        mc:Ignorable="d"
+        Title="MainWindow" MinHeight="715" MinWidth="1112" Height="715" Width="1112" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"
+                      GlassFrameThickness="10"
+                      NonClientFrameEdges="None"
+                      ResizeBorderThickness="3"
+                      CornerRadius="20"/>
+    </WindowChrome.WindowChrome>
+    <Border Background="#18191A" CornerRadius="20 20 20 20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="162"/>
+                <ColumnDefinition MinWidth="788"/>
+                <ColumnDefinition Width="162"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="Middle" Grid.Column="1">
+                <Middle:m_main x:Name="M_Main"/>
+            </Grid>
+            <Grid x:Name="Left" Grid.Column="0">
+                <Left:l_main x:Name="L_Main"/>
+            </Grid>
+            <Grid x:Name="Right" Grid.Column="2">
+                <Right:r_main x:Name="R_Main"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
