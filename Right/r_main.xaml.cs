@@ -25,24 +25,19 @@ namespace ChessGame.Right
             InitializeComponent();
         }
 
+        public WindowState WindowState { get; private set; }
+
         private void closeButton_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
         }
         private void maximizeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (WindowState == WindowState.Normal)
-            {
-                this.WindowState = WindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = WindowState.Normal;
-            }
+            WindowState = WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal;
         }
         private void minimizeButton_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
     }
 }
